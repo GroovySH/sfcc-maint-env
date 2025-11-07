@@ -1,0 +1,4 @@
+fastcgi_param SHFW_ENV development;
+fastcgi_param SHFW_MAIL_PREFIX "【ローカル開発環境】";
+#fastcgi_param HTTP_TRUE_CLIENT_IP "1.2.3.4";
+fastcgi_param HTTP_X_FORWARDED_FOR "$remote_addr, $server_addr";
