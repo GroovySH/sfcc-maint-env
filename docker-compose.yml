@@ -13,8 +13,8 @@ services:
       - ./docker/nginx/fastcgi_params2:/etc/nginx/fastcgi_params2
       - ./docker/nginx/ssl/:/etc/nginx/ssl/
       - ./docker/nginx/log/:/var/log/nginx/
-      - ./php-soundhouse:/var/www/html/
-      - ./php-soundhouse:/soundhouse/
+      - ./sfcc-sh-php:/var/www/html/
+      - ./sfcc-sh-php:/soundhouse/
     tty: true # ← これがないとコンテナにログインできない
     ports:
       - 80:80 #80ポート
@@ -31,8 +31,8 @@ services:
     working_dir: /var/www/html
     command: php-fpm -F
     volumes:
-      - ./php-soundhouse:/var/www/html/
-      - ./php-soundhouse:/soundhouse/
+      - ./sfcc-sh-php:/var/www/html/
+      - ./sfcc-sh-php:/soundhouse/
       - ./docker/php/log:/var/log/php-fpm
       - ./docker/php/php.ini:/etc/php.ini
     tty: true

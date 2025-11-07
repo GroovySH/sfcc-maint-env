@@ -1,0 +1,3 @@
+docker/redis/data/
+docker/nginx/log/
+docker/php/log/
