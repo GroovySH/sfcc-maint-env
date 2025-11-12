@@ -1,3 +1,4 @@
-docker/redis/data/
 docker/nginx/log/
+docker/nginx/ssl/
 docker/php/log/
+docker/redis/data/

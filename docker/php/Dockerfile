@@ -1,7 +1,21 @@
 FROM amazonlinux:2023
 RUN dnf update -y
-RUN dnf install -y php php-fpm php-pgsql php-json php-devel php-gd git g++ php-pear libzip libzip-devel php-intl git zip unzip php-redis
-RUN pecl install xdebug zip
+RUN dnf install -y php \
+                   php-devel \
+                   php-fpm \
+                   php-gd \
+                   php-intl \
+                   php-json \
+                   php-pear \
+                   php-pgsql \
+                   php-redis \
+                   php-zip \
+                   git \
+                   g++ \
+                   zip \
+                   unzip \
+                   libzip \
+                   libzip-devel
 RUN mkdir -p /run/php-fpm
 COPY ../docker/php/www.conf /etc/php-fpm.d/www.conf
 RUN chown nginx:nginx /var/lib/php/session
